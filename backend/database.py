@@ -2,6 +2,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.pool import Pool
 
 
 Database_url = "mysql+mysqlconnector://root@localhost/practice3"
@@ -16,4 +17,5 @@ def get_db():
     try:
         yield db
     finally:
-        db.close()
+        db.close() 
+        
